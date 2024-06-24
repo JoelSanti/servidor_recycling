@@ -8,6 +8,9 @@ const Sectors: CollectionConfig = {
         type: 'text',
       },
     ],
+    access: {
+      read: () => true, // Todos pueden leer
+    },
   };
 
 export default Sectors;

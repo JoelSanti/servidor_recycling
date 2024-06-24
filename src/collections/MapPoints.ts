@@ -25,6 +25,9 @@ const PointsRecycling: CollectionConfig = {
         relationTo: 'sectors',
       },
     ],
+    access: {
+      read: () => true, // Todos pueden leer
+    },
   };
   
   export default PointsRecycling;

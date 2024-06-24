@@ -8,5 +8,8 @@ var Sectors = {
             type: 'text',
         },
     ],
+    access: {
+        read: function () { return true; }, // Todos pueden leer
+    },
 };
 exports.default = Sectors;

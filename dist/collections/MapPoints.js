@@ -25,5 +25,8 @@ var PointsRecycling = {
             relationTo: 'sectors',
         },
     ],
+    access: {
+        read: function () { return true; }, // Todos pueden leer
+    },
 };
 exports.default = PointsRecycling;

@@ -22,6 +22,9 @@ const CalendarCollection: CollectionConfig = {
         relationTo: 'sectors',
       },
     ],
+    access: {
+      read: () => true, // Todos pueden leer
+    },
   };
   
     export default CalendarCollection;
