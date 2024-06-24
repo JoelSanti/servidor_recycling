@@ -13,11 +13,11 @@ var PointsRecycling = {
         },
         {
             name: 'latitud',
-            type: 'text',
+            type: 'number',
         },
         {
             name: 'longitud',
-            type: 'text',
+            type: 'number',
         },
         {
             name: 'id_sector',
