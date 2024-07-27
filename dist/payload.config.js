@@ -13,13 +13,14 @@ var Users_1 = __importDefault(require("./collections/Users"));
 var Sectors_1 = __importDefault(require("./collections/Sectors"));
 var MapPoints_1 = __importDefault(require("./collections/MapPoints"));
 var Calendars_1 = __importDefault(require("./collections/Calendars"));
+var Scans_1 = __importDefault(require("./collections/Scans"));
 exports.default = (0, config_1.buildConfig)({
     admin: {
         user: Users_1.default.slug,
         bundler: (0, bundler_webpack_1.webpackBundler)(),
     },
     editor: (0, richtext_slate_1.slateEditor)({}),
-    collections: [Users_1.default, Sectors_1.default, MapPoints_1.default, Calendars_1.default],
+    collections: [Users_1.default, Sectors_1.default, MapPoints_1.default, Calendars_1.default, Scans_1.default],
     typescript: {
         outputFile: path_1.default.resolve(__dirname, 'payload-types.ts'),
     },

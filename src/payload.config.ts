@@ -10,6 +10,7 @@ import Users from './collections/Users'
 import Sectors from './collections/Sectors'
 import PointsRecycling from './collections/MapPoints'
 import CalendarCollection from './collections/Calendars'
+import Scans from './collections/Scans'
 
 export default buildConfig({
   admin: {
@@ -17,7 +18,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Sectors, PointsRecycling, CalendarCollection],
+  collections: [Users, Sectors, PointsRecycling, CalendarCollection, Scans],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
