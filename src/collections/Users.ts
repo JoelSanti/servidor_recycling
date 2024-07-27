@@ -3,6 +3,14 @@ import { CollectionConfig } from 'payload/types';
 const Users: CollectionConfig = {
   slug: 'users',
   auth: true,
+  access: {
+    create: ({ req }) => {
+      // Permitir la creación de usuarios si el usuario no está autenticado
+      // o si el usuario autenticado tiene el rol 'admin'
+      return !req.user || req.user.role === 'admin';
+    },
+    // Configurar el acceso para otras operaciones (read, update, delete) según sea necesario
+  },
   admin: {
     useAsTitle: 'email',
   },
@@ -31,6 +39,19 @@ const Users: CollectionConfig = {
     },
     // Add more fields as needed
   ],
+  hooks: {
+    beforeChange: [
+      ({ req, data }) => {
+        // Si el usuario no está autenticado y está intentando crear un usuario 'admin',
+        // lanzar un error
+        if (!req.user && data.role === 'admin') {
+          throw new Error('Unauthenticated users cannot create admin users');
+        }
+
+        return data;
+      },
+    ],
+  },
 };
 
 export default Users;
