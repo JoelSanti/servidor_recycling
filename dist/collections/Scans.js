@@ -16,6 +16,17 @@ var Scans = {
             relationTo: 'users',
             required: true,
         },
+        {
+            name: 'wasteType',
+            type: 'select',
+            label: 'Waste Type',
+            options: [
+                { label: 'Residuos Aprovechables', value: 'residuos_aprovechables' },
+                { label: 'Residuos Orgánicos Aprovechables', value: 'residuos_organicos_aprovechables' },
+                { label: 'Residuos No Aprovechables', value: 'residuos_no_aprovechables' },
+            ],
+            required: true,
+        },
     ],
     access: {
         read: function (_a) {
