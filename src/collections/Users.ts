@@ -39,7 +39,7 @@ const Users: CollectionConfig = {
     },
     // Add more fields as needed
   ],
-  hooks: {
+    hooks: {
     beforeChange: [
       ({ req, data }) => {
         // Si el usuario no está autenticado y está intentando crear un usuario 'admin',
