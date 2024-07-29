@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Users = {
     slug: 'users',
-    auth: true,
+    auth: {
+        tokenExpiration: 30 * 24 * 60 * 60,
+    },
     access: {
         create: function (_a) {
             var req = _a.req;

@@ -2,7 +2,9 @@ import { CollectionConfig } from 'payload/types';
 
 const Users: CollectionConfig = {
   slug: 'users',
-  auth: true,
+  auth: {
+    tokenExpiration: 30 * 24 * 60 * 60,
+  },
   access: {
     create: ({ req }) => {
       // Permitir la creación de usuarios si el usuario no está autenticado
